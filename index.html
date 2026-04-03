@@ -10,11 +10,16 @@
       margin:0;
       font-family:Arial, Helvetica, sans-serif;
       background:#000;
-      color:white;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    *{
+      box-sizing:border-box;
     }
 
     .highlight{
-      color:#d78b8b;
+      color:#d88f8f;
       font-weight:bold;
     }
 
@@ -28,9 +33,9 @@
 
     .logo{
       text-align:center;
-      padding:20px;
-      font-size:28px;
-      letter-spacing:3px;
+      padding:24px 16px;
+      font-size:30px;
+      letter-spacing:4px;
       border-bottom:1px solid #222;
     }
 
@@ -40,7 +45,8 @@
       flex-wrap:wrap;
       border-bottom:1px solid #333;
       position:relative;
-      z-index:20;
+      z-index:100;
+      background:#000;
     }
 
     .menu-item{
@@ -49,6 +55,7 @@
       border-right:1px solid #333;
       position:relative;
       font-size:16px;
+      user-select:none;
     }
 
     .menu-item:last-child{
@@ -64,13 +71,14 @@
       position:absolute;
       top:100%;
       left:0;
-      min-width:280px;
+      min-width:290px;
       background:#2b2b2b;
       border:1px solid #444;
-      z-index:50;
+      z-index:200;
+      text-align:left;
     }
 
-    .menu-item:hover .dropdown{
+    .dropdown.open{
       display:block;
     }
 
@@ -85,13 +93,13 @@
     }
 
     .dropdown div:hover{
-      background:#3b3b3b;
+      background:#3a3a3a;
     }
 
     .slider{
       width:90%;
       max-width:1400px;
-      margin:30px auto;
+      margin:30px auto 10px auto;
       position:relative;
     }
 
@@ -105,43 +113,46 @@
 
     .slide img{
       width:100%;
-      height:520px;
+      height:540px;
       object-fit:cover;
       border:1px solid #444;
+      display:block;
     }
 
     .arrow{
       position:absolute;
       top:50%;
       transform:translateY(-50%);
-      font-size:50px;
+      font-size:56px;
+      color:#fff;
       cursor:pointer;
-      color:white;
-      padding:10px;
       user-select:none;
+      padding:10px 14px;
+      line-height:1;
     }
 
     .left{
-      left:15px;
+      left:12px;
     }
 
     .right{
-      right:15px;
+      right:12px;
     }
 
     .dots{
       text-align:center;
-      margin-top:12px;
+      margin-top:14px;
+      margin-bottom:10px;
     }
 
     .dot{
-      height:12px;
       width:12px;
-      background:white;
-      display:inline-block;
-      margin:5px;
+      height:12px;
       border-radius:50%;
+      background:#fff;
       opacity:.4;
+      display:inline-block;
+      margin:0 5px;
       cursor:pointer;
     }
 
@@ -149,16 +160,28 @@
       opacity:1;
     }
 
+    .footer{
+      text-align:center;
+      padding:40px 20px 50px 20px;
+      font-size:22px;
+      border-top:1px solid #333;
+      margin-top:40px;
+    }
+
+    .footer strong{
+      font-weight:normal;
+    }
+
     .content-section{
-      width:90%;
-      max-width:1400px;
-      margin:0 auto 40px auto;
+      width:92%;
+      max-width:1450px;
+      margin:0 auto;
     }
 
     .walkthrough-header{
       text-align:center;
       font-size:48px;
-      margin-top:40px;
+      margin-top:42px;
       margin-bottom:10px;
       letter-spacing:2px;
     }
@@ -172,33 +195,36 @@
     .game-title-row{
       display:flex;
       flex-direction:row-reverse;
-      align-items:flex-start;
       justify-content:flex-end;
-      gap:30px;
+      align-items:flex-start;
+      gap:28px;
       margin-bottom:30px;
     }
 
     .game-icon{
-      width:120px;
-      height:120px;
+      width:110px;
+      height:110px;
       object-fit:cover;
-      border-radius:20px;
-      border:3px solid #999;
+      border-radius:22px;
+      border:3px solid #9c9c9c;
       box-shadow:0 0 10px rgba(255,255,255,0.2);
       flex-shrink:0;
     }
 
+    .game-title-wrap{
+      flex:1;
+    }
+
     .game-title{
       font-size:34px;
-      margin-top:20px;
-      font-weight:normal;
+      margin-top:16px;
       letter-spacing:1px;
+      font-weight:normal;
     }
 
     .spoiler{
       font-size:22px;
-      margin-top:10px;
-      margin-bottom:20px;
+      margin-bottom:18px;
     }
 
     .warning{
@@ -209,37 +235,32 @@
     .steps{
       font-size:22px;
       line-height:1.45;
-      padding-left:32px;
+      padding-left:34px;
+      margin:0;
     }
 
     .steps li{
       margin-bottom:18px;
     }
 
-    .footer{
-      text-align:center;
-      padding:40px 20px;
-      font-size:22px;
-      border-top:1px solid #333;
-      margin-top:50px;
+    .note-line{
+      margin-top:5px;
+      display:block;
     }
 
-    .footer strong{
-      color:white;
-    }
-
-    @media(max-width:900px){
+    @media(max-width:950px){
       .slide img{
-        height:300px;
+        height:330px;
       }
 
       .menu-item{
-        padding:14px 18px;
+        padding:14px 16px;
         font-size:14px;
       }
 
       .logo{
-        font-size:22px;
+        font-size:24px;
+        letter-spacing:3px;
       }
 
       .walkthrough-header{
@@ -261,8 +282,14 @@
         margin-top:0;
       }
 
+      .spoiler,
+      .warning{
+        font-size:18px;
+      }
+
       .steps{
         font-size:18px;
+        padding-left:24px;
       }
 
       .footer{
@@ -270,7 +297,47 @@
       }
 
       .dropdown{
-        min-width:220px;
+        min-width:230px;
+      }
+
+      .arrow{
+        font-size:46px;
+      }
+    }
+
+    @media(max-width:600px){
+      .slide img{
+        height:240px;
+      }
+
+      .logo{
+        font-size:20px;
+      }
+
+      .menu-item{
+        padding:12px 10px;
+        font-size:13px;
+      }
+
+      .walkthrough-header{
+        font-size:28px;
+      }
+
+      .game-title{
+        font-size:22px;
+      }
+
+      .steps{
+        font-size:16px;
+      }
+
+      .footer{
+        font-size:16px;
+      }
+
+      .arrow{
+        font-size:40px;
+        padding:6px;
       }
     }
   </style>
@@ -284,10 +351,10 @@
     <div class="menu-item">About Us</div>
     <div class="menu-item">The Games</div>
 
-    <div class="menu-item">
+    <div class="menu-item" onclick="toggleWalkthroughMenu(event)">
       Walkthrough
-      <div class="dropdown">
-        <div onclick="event.stopPropagation(); showPage('treasurePage')">The Hidden Treasure of Nahala</div>
+      <div class="dropdown" id="walkthroughDropdown">
+        <div onclick="event.stopPropagation(); openWalkthrough('treasurePage')">The Hidden Treasure of Nahala</div>
         <div onclick="event.stopPropagation(); alert('This walkthrough will be added soon.')">The Hidden Caverns of Nahala</div>
         <div onclick="event.stopPropagation(); alert('This walkthrough will be added soon.')">The Hidden Valley of Nahala</div>
       </div>
@@ -335,7 +402,7 @@
       <div class="game-title-row">
         <img src="game1.jpg" alt="The Hidden Treasure of Nahala" class="game-icon">
 
-        <div style="flex:1;">
+        <div class="game-title-wrap">
           <div class="game-title">THE HIDDEN TREASURE OF NAHALA</div>
         </div>
       </div>
@@ -358,16 +425,22 @@
 
         <li>Fill the <span class="highlight">watering can</span> in the bathroom. Water the flower in the entrance hall and take the <span class="highlight">battery</span>.</li>
 
-        <li>Go into the bathroom and close the shower curtain to reveal the code. Use this code to unite the leather bag in the parents' room. Collect the <span class="highlight">key</span>.<br>
-        Note: Make sure to zoom on the code in the bathroom and click on it!</li>
+        <li>
+          Go into the bathroom and close the shower curtain to reveal the code. Use this code to unite the leather bag in the parents' room. Collect the <span class="highlight">key</span>.
+          <span class="note-line">Note: Make sure to zoom on the code in the bathroom and click on it!</span>
+        </li>
 
-        <li>Open the kids room using the <span class="highlight">key</span> you have found in the parents' room. Use the battery to activate the train in the kids room. Collect the <span class="highlight">eagle-shaped key</span>.</li>
+        <li>Open the kids room using the <span class="highlight">key</span> you have found in the parents' room. Use the <span class="highlight">battery</span> to activate the train in the kids room. Collect the <span class="highlight">eagle-shaped key</span>.</li>
 
-        <li>Solve the riddle on the shelf in the kids room and get the <span class="highlight">first test tube</span>.<br>
-        Note: for further instructions regarding this riddle, see The Tower of Hanoi.</li>
+        <li>
+          Solve the riddle on the shelf in the kids room and get the <span class="highlight">first test tube</span>.
+          <span class="note-line">Note: for further instructions regarding this riddle, see The Tower of Hanoi.</span>
+        </li>
 
-        <li>Use the <span class="highlight">eagle-shaped key</span> to open the cell under the eagle in the entrance hall. Take the <span class="highlight">hoe</span>.<br>
-        Note: Make sure to zoom in when trying to open the eagle cell!</li>
+        <li>
+          Use the <span class="highlight">eagle-shaped key</span> to open the cell under the eagle in the entrance hall. Take the <span class="highlight">hoe</span>.
+          <span class="note-line">Note: Make sure to zoom in when trying to open the eagle cell!</span>
+        </li>
 
         <li>Use the <span class="highlight">pry bar</span> to lift the floor tile in the work room and get the <span class="highlight">white key</span> to open the garden's door.</li>
 
@@ -417,8 +490,10 @@
 
         <li>Use the <span class="highlight">dust cleaner</span> to clean the dust in the pantry. Open the secret door with the <span class="highlight">pry bar</span> to reveal the puzzle on it.</li>
 
-        <li>Solve the puzzle under the dust (using the code on the picture near the elevator) and open the door to the secret room.<br>
-        Note: Make sure to set the left up tile in the right order (yellow pipe points up).</li>
+        <li>
+          Solve the puzzle under the dust (using the code on the picture near the elevator) and open the door to the secret room.
+          <span class="note-line">Note: Make sure to set the left up tile in the right order (yellow pipe points up).</span>
+        </li>
       </ol>
 
       <div class="footer">
@@ -429,8 +504,8 @@
 
   <script>
     let index = 0;
-    let slides = document.querySelectorAll(".slide");
-    let dots = document.querySelectorAll(".dot");
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
 
     function show(i){
       slides.forEach(s => s.classList.remove("active"));
@@ -457,16 +532,39 @@
     }
 
     setInterval(() => {
-      if(document.getElementById("homePage").classList.contains("active")){
+      const homePage = document.getElementById("homePage");
+      if(homePage.classList.contains("active")){
         next();
       }
     }, 4000);
 
     function showPage(pageId){
-      document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+      document.querySelectorAll(".page").forEach(page => page.classList.remove("active"));
       document.getElementById(pageId).classList.add("active");
-      window.scrollTo(0,0);
+      closeWalkthroughMenu();
+      window.scrollTo(0, 0);
     }
+
+    function toggleWalkthroughMenu(event){
+      event.stopPropagation();
+      const dropdown = document.getElementById("walkthroughDropdown");
+      dropdown.classList.toggle("open");
+    }
+
+    function closeWalkthroughMenu(){
+      const dropdown = document.getElementById("walkthroughDropdown");
+      if(dropdown){
+        dropdown.classList.remove("open");
+      }
+    }
+
+    function openWalkthrough(pageId){
+      showPage(pageId);
+    }
+
+    document.addEventListener("click", function(){
+      closeWalkthroughMenu();
+    });
   </script>
 
 </body>

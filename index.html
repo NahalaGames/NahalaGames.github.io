@@ -232,6 +232,12 @@
       margin-bottom:30px;
     }
 
+    .section-title{
+      font-size:26px;
+      margin-top:30px;
+      margin-bottom:18px;
+    }
+
     .steps{
       font-size:22px;
       line-height:1.45;
@@ -283,7 +289,8 @@
       }
 
       .spoiler,
-      .warning{
+      .warning,
+      .section-title{
         font-size:18px;
       }
 
@@ -355,7 +362,7 @@
       Walkthrough
       <div class="dropdown" id="walkthroughDropdown">
         <div onclick="event.stopPropagation(); openWalkthrough('treasurePage')">The Hidden Treasure of Nahala</div>
-        <div onclick="event.stopPropagation(); alert('This walkthrough will be added soon.')">The Hidden Caverns of Nahala</div>
+        <div onclick="event.stopPropagation(); openWalkthrough('cavernsPage')">The Hidden Caverns of Nahala</div>
         <div onclick="event.stopPropagation(); alert('This walkthrough will be added soon.')">The Hidden Valley of Nahala</div>
       </div>
     </div>
@@ -393,7 +400,7 @@
     </div>
   </div>
 
-  <!-- WALKTHROUGH PAGE -->
+  <!-- WALKTHROUGH PAGE 1 -->
   <div id="treasurePage" class="page">
     <div class="content-section">
       <div class="walkthrough-header">WALKTHROUGH</div>
@@ -412,88 +419,179 @@
 
       <ol class="steps">
         <li>Place the <span class="highlight">sun-shaped stone</span> on the entrance doors to enter the house.</li>
-
         <li>Use the <span class="highlight">wine bottle</span> in the living room to fill the glass of wine in the kitchen. Collect the <span class="highlight">wooden key</span>.</li>
-
         <li>On the shelf at the work room, take the <span class="highlight">first piece of the puzzle</span>.</li>
-
         <li>Use the <span class="highlight">wooden key</span> to open the closet in the parents' room and take a <span class="highlight">light bulb</span>.</li>
-
         <li>Placing the <span class="highlight">light bulb</span> into the kitchen lamp reveals the colors sequence to open the pantry doors.</li>
-
         <li>In the pantry you will find a <span class="highlight">watering can</span> and a <span class="highlight">pry bar</span>.</li>
-
         <li>Fill the <span class="highlight">watering can</span> in the bathroom. Water the flower in the entrance hall and take the <span class="highlight">battery</span>.</li>
-
-        <li>
-          Go into the bathroom and close the shower curtain to reveal the code. Use this code to unite the leather bag in the parents' room. Collect the <span class="highlight">key</span>.
-          <span class="note-line">Note: Make sure to zoom on the code in the bathroom and click on it!</span>
-        </li>
-
+        <li>Go into the bathroom and close the shower curtain to reveal the code. Use this code to unite the leather bag in the parents' room. Collect the <span class="highlight">key</span>.<span class="note-line">Note: Make sure to zoom on the code in the bathroom and click on it!</span></li>
         <li>Open the kids room using the <span class="highlight">key</span> you have found in the parents' room. Use the <span class="highlight">battery</span> to activate the train in the kids room. Collect the <span class="highlight">eagle-shaped key</span>.</li>
-
-        <li>
-          Solve the riddle on the shelf in the kids room and get the <span class="highlight">first test tube</span>.
-          <span class="note-line">Note: for further instructions regarding this riddle, see The Tower of Hanoi.</span>
-        </li>
-
-        <li>
-          Use the <span class="highlight">eagle-shaped key</span> to open the cell under the eagle in the entrance hall. Take the <span class="highlight">hoe</span>.
-          <span class="note-line">Note: Make sure to zoom in when trying to open the eagle cell!</span>
-        </li>
-
+        <li>Solve the riddle on the shelf in the kids room and get the <span class="highlight">first test tube</span>.<span class="note-line">Note: for further instructions regarding this riddle, see The Tower of Hanoi.</span></li>
+        <li>Use the <span class="highlight">eagle-shaped key</span> to open the cell under the eagle in the entrance hall. Take the <span class="highlight">hoe</span>.<span class="note-line">Note: Make sure to zoom in when trying to open the eagle cell!</span></li>
         <li>Use the <span class="highlight">pry bar</span> to lift the floor tile in the work room and get the <span class="highlight">white key</span> to open the garden's door.</li>
-
         <li>Use the <span class="highlight">hoe</span> to dig up the <span class="highlight">tile</span> from the pit in the garden.</li>
-
         <li>Use the code on the pillow in the living room to open the drawer at the fountain in the garden. Collect the <span class="highlight">rusty key</span> (that opens the back door of the work room) and the <span class="highlight">star-shaped stone</span>.</li>
-
         <li>Use the <span class="highlight">star-shaped stone</span> to open a drawer in the kids room. Take the <span class="highlight">second test tube</span>.</li>
-
         <li>Place the <span class="highlight">tile</span> in the missing spot in the bathroom and collect the <span class="highlight">rope</span>.</li>
-
         <li>Use the <span class="highlight">rope</span> to climb down the well. Collect the <span class="highlight">snake-shaped key</span> and the elevator button.</li>
-
         <li>Use the <span class="highlight">snake-shaped key</span> to open the cell under the snake to find an <span class="highlight">axe</span>.</li>
-
         <li>Use the <span class="highlight">axe</span> to open the passage in the garden.</li>
-
         <li>On the window in the garden (when the curtain is closed) find the code to open the oven.</li>
-
         <li>In the garden, under the stone, collect the <span class="highlight">lighter</span>.</li>
-
         <li>Use the code combination you have found to open the oven. Inside the oven you will find a <span class="highlight">chimney cleaner</span>.</li>
-
         <li>Lit the candle in the hallway and collect the <span class="highlight">screwdriver</span>.</li>
-
         <li>In the garden, use the <span class="highlight">screwdriver</span> to open the ventilation shaft. Get the <span class="highlight">sun-shaped stone</span> and the <span class="highlight">second piece of the puzzle</span>.</li>
-
         <li>Place the <span class="highlight">sun-shaped stone</span> in the box located in the tree trunk. Collect the <span class="highlight">magnifying glass</span>.</li>
-
         <li>Use the magnifying glass to find the code on the rice. Open the safe in the work room with this code and get the <span class="highlight">statue's head</span>.</li>
-
         <li>Place the <span class="highlight">head of the statue</span> in the garden. Take the <span class="highlight">record</span>.</li>
-
         <li>Put the <span class="highlight">record</span> onto the record player to get a <span class="highlight">moon-shaped stone</span>.</li>
-
         <li>Use the <span class="highlight">moon-shaped stone</span> to open the chest in the parents' room and collect the <span class="highlight">third test tube</span>.</li>
-
         <li>Use the elevator to get the roof and collect the <span class="highlight">third piece of the puzzle</span> from the box to the left.</li>
-
         <li>Clean the chimney with the chimney cleaner to push a box into the fire place.</li>
-
         <li>Go to the living room and open the box inside the fire place using the time on the clock in the workroom. Collect the <span class="highlight">fourth piece of the puzzle</span>.</li>
-
         <li>Complete the puzzle in the living room (using the code on the book at the parents' room) to find the <span class="highlight">fourth test tube</span>.</li>
-
         <li>Use the four test tubes in the work room and get the wooden key. Open the chest in the kids room and get the <span class="highlight">dust cleaner</span>.</li>
-
         <li>Use the <span class="highlight">dust cleaner</span> to clean the dust in the pantry. Open the secret door with the <span class="highlight">pry bar</span> to reveal the puzzle on it.</li>
+        <li>Solve the puzzle under the dust (using the code on the picture near the elevator) and open the door to the secret room.<span class="note-line">Note: Make sure to set the left up tile in the right order (yellow pipe points up).</span></li>
+      </ol>
 
-        <li>
-          Solve the puzzle under the dust (using the code on the picture near the elevator) and open the door to the secret room.
-          <span class="note-line">Note: Make sure to set the left up tile in the right order (yellow pipe points up).</span>
-        </li>
+      <div class="footer">
+        <strong>*** For any question, problem or comment Please contact us: NahalaGames@gmail.com</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- WALKTHROUGH PAGE 2 -->
+  <div id="cavernsPage" class="page">
+    <div class="content-section">
+      <div class="walkthrough-header">WALKTHROUGH</div>
+      <div class="walkthrough-subline">✦────────✦────────✦</div>
+
+      <div class="game-title-row">
+        <img src="logo.png" alt="The Hidden Caverns of Nahala" class="game-icon">
+
+        <div class="game-title-wrap">
+          <div class="game-title">THE HIDDEN CAVERNS OF NAHALA</div>
+        </div>
+      </div>
+
+      <div class="spoiler">Spoiler Alert!</div>
+      <div class="warning">Do not read this walkthrough unless you're really stuck...</div>
+
+      <div class="section-title">Prologue:</div>
+      <ol class="steps">
+        <li>Use the <span class="highlight">pry bar</span> in the bag to open the entrance door.</li>
+        <li>Find the code on the picture at the dining room to open the buttons game in the Psi bedroom (first bedroom to the right). Collect the <span class="highlight">jack</span>.</li>
+        <li>Move the closet in the Omega bedroom (second bedroom to the right). Collect <span class="highlight">yellow potion bottle</span> and reveal first code of potions game.</li>
+        <li>Collect the <span class="highlight">pail</span> from the Phi bathroom (through the Phi bedroom – second to the left).</li>
+        <li>Use the <span class="highlight">pry bar</span> to open the tile in the pantry and collect a <span class="highlight">shoe</span>.</li>
+        <li>Put the <span class="highlight">shoe</span> at the stand in the Psi bedroom and collect the <span class="highlight">silver eagle key</span>.</li>
+        <li>Use the <span class="highlight">pry bar</span> to open the tile in the Psi bedroom and collect the <span class="highlight">hammer</span>.</li>
+        <li>Use the <span class="highlight">silver eagle key</span> to open the cell under the silver eagle in the hallway. Collect the <span class="highlight">wrench</span>.</li>
+        <li>At the Psi bathroom use the <span class="highlight">wrench</span> to open the secret door to the cavern that leads to music room.</li>
+        <li>Collect the <span class="highlight">rope ladder</span> from the cavern floor between the Psi bathroom and the music room.</li>
+        <li>Collect the <span class="highlight">tap</span> from the music room.</li>
+        <li>Use the <span class="highlight">rope ladder</span> to go down the well to the underground hall.</li>
+      </ol>
+
+      <div class="section-title">Red Diamond Story:</div>
+      <ol class="steps">
+        <li>Collect <span class="highlight">two keys</span> from the flowerpot at the center of underground hall. Open the kitchen door and the caverns door the leads from the pantry to the Sigma bedroom (first to the left).</li>
+        <li>Collect the <span class="highlight">screwdriver</span> that on top of the closet in the kitchen.</li>
+        <li>Set the <span class="highlight">tap</span> in the kitchen and fill the pail with water.</li>
+        <li>Use the <span class="highlight">pail</span> to clean the floor at the cavern between the pantry and the Sigma bedroom and reveal the code. Use this code to open the rings game at the underground hall and open the library door.</li>
+        <li>With the <span class="highlight">hammer</span> break the jar in the Sigma bathroom and collect <span class="highlight">three keys</span>. Open all three locked doors at the underground hall.</li>
+        <li>Use the <span class="highlight">screwdriver</span> to open the ventilation shaft at the Phi bathroom and collect the <span class="highlight">rusty key</span>. Open the door to the pray room (right door at the entrance hall).</li>
+        <li>Collect the <span class="highlight">knife</span> from a hole in the wall at the cavern between the work room and the alchemy room.</li>
+        <li>From the shelf at the alchemy room, collect the <span class="highlight">coal</span>.</li>
+        <li>Use the <span class="highlight">knife</span> to cut the rope at the ritual room and open the door to the cavern between the ritual room and the burial room.</li>
+        <li>In a hole at the wall in the cavern between the library and the calligraphy room, collect <span class="highlight">purple potion bottle</span> and reveal second code of potions game.</li>
+        <li>Collect the <span class="highlight">bug</span> hidden between the barrels in the wine room, place it at the board in the Phi bedroom and collect the <span class="highlight">ice pick</span>.</li>
+        <li>Use the <span class="highlight">ice pick</span> to break the ice in the burial room and collect the <span class="highlight">ice bloc</span>.</li>
+        <li>Collect the <span class="highlight">matches</span> from the machine at the candles room.</li>
+        <li>Use the <span class="highlight">coil</span> and the matches to lit a fire in the stove at the bakery room, place the <span class="highlight">ice bloc</span> to melt and collect the <span class="highlight">cogwheel</span>.</li>
+        <li>At the ritual room, use the <span class="highlight">jack</span> to move the stone bench. Collect the <span class="highlight">pitchfork</span>.</li>
+        <li>Use the <span class="highlight">pitchfork</span> to remove the hay and reveal the cavern.</li>
+        <li>In the cavern at the bakery room, collect the <span class="highlight">tile</span> from the hole in the wall.</li>
+        <li>Place the <span class="highlight">tile</span> at the Phi bathroom and collect a <span class="highlight">book</span>.</li>
+        <li>Place the <span class="highlight">book</span> at the shelf in the library and collect a <span class="highlight">saw</span>.</li>
+        <li>Use the <span class="highlight">saw</span> the open the cavern door at the candles room.</li>
+        <li>Solve the poles game at the cavern room of the candles room (use the hint from the candles shelf). Collect the <span class="highlight">leather strip</span> and a <span class="highlight">yellow puzzle piece</span>.</li>
+        <li>Place the <span class="highlight">leather strip</span> and the <span class="highlight">cogwheel</span> on the device in the work room. Collect the <span class="highlight">red diamond</span>.</li>
+      </ol>
+
+      <div class="section-title">Blue Diamond Story:</div>
+      <ol class="steps">
+        <li>Collect the <span class="highlight">black snake key</span> from the foot of the bed in the Omega bedroom.</li>
+        <li>Use the <span class="highlight">black snake key</span> to open the cell under the black snake at the entrance hall. Collect the <span class="highlight">sigma pattern</span>.</li>
+        <li>Use the <span class="highlight">sigma pattern</span> to open the sigma box in the sigma bedroom. Collect the <span class="highlight">red flower</span>.</li>
+        <li>Place the <span class="highlight">red flower</span> in the flowerpot at the dining room and collect the <span class="highlight">magnet</span>.</li>
+        <li>Use the <span class="highlight">magnet</span> to collect the <span class="highlight">fishing hook</span> at the Omega bathroom.</li>
+        <li>Use the <span class="highlight">fishing hook</span> to collect the <span class="highlight">golden eagle key</span> from the floor ventilation at Sigma bathroom.</li>
+        <li>Use the <span class="highlight">golden eagle key</span> to open the cell under the golden eagle at the holy room. Collect the <span class="highlight">cutter</span>.</li>
+        <li>Break the mirror at the Omega bathroom with the <span class="highlight">hammer</span>. Collect the <span class="highlight">mirror shard</span>.</li>
+        <li>Place the <span class="highlight">mirror shard</span> underneath the bath in the Psi bathroom to reveal the code to letters game at the garden's door (at the pray room, second door to the right).</li>
+        <li>Use to <span class="highlight">cutter</span> to cut the bush in the garden. Collect <span class="highlight">blue potion bottle</span> and reveal first code of cubes game.</li>
+        <li>Solve the cubes game at the dining room and collect the <span class="highlight">blue diamond</span>.</li>
+      </ol>
+
+      <div class="section-title">Green Diamond Story:</div>
+      <ol class="steps">
+        <li>In the cavern at the candles room, collect the <span class="highlight">silver snake key</span> from the hole in the wall.</li>
+        <li>Use the <span class="highlight">silver snake key</span> to open the cell under the silver snake in the hallway. Collect the <span class="highlight">sinker</span>.</li>
+        <li>Use the <span class="highlight">sinker</span> to open the scales in the work room. Collect the <span class="highlight">purple flower</span>.</li>
+        <li>Place the <span class="highlight">purple flower</span> in the flowerpot at the Sigma bedroom and collect the <span class="highlight">phi pattern</span>.</li>
+        <li>Use the <span class="highlight">phi pattern</span> to open the phi box in the candles room. Collect the <span class="highlight">white eagle key</span>.</li>
+        <li>Use the <span class="highlight">white eagle key</span> to open the cell under the white eagle in the underground hall. Collect the <span class="highlight">scarf</span>.</li>
+        <li>Place the <span class="highlight">scarf</span> at the stand in the dressing room. Collect the <span class="highlight">omega key</span>.</li>
+        <li>Use the <span class="highlight">omega key</span> to open the drawer in the library. Collect the <span class="highlight">purple puzzle piece</span>.</li>
+        <li>Break the vase in the ritual room with the <span class="highlight">hammer</span>. Collect the golden snake key.</li>
+        <li>Use the <span class="highlight">golden snake key</span> to open the cell under the golden snake in the holly room. Collect the <span class="highlight">psi pattern</span>.</li>
+        <li>Use the <span class="highlight">psi pattern</span> to open the psi box at the wall in the work room. Collect the <span class="highlight">knob</span> and the <span class="highlight">rope loop</span>.</li>
+        <li>Use the <span class="highlight">rope loop</span> to collect the <span class="highlight">toys grabber</span> at the Phi bedroom.</li>
+        <li>Use the <span class="highlight">toys grabber</span> at the cavern between the pantry and the Sigma bedroom. Collect the <span class="highlight">green diamond</span>.</li>
+      </ol>
+
+      <div class="section-title">Purple Diamond Story:</div>
+      <ol class="steps">
+        <li>Use the <span class="highlight">knob</span> to open the drawer in the kitchen. Collect the <span class="highlight">nib</span>.</li>
+        <li>Place the <span class="highlight">nib</span> at the inkstand in the calligraphy room. Collect the <span class="highlight">phi key</span>.</li>
+        <li>Use the <span class="highlight">phi key</span> to open the closet in the sigma bedroom. Collect the <span class="highlight">metal board</span>.</li>
+        <li>Place the <span class="highlight">metal board</span> on the wall at the cavern between ritual room and burial room and reveal the code for the switches game.</li>
+        <li>Solve the switches game at the holly room and collect the <span class="highlight">bottle of wine</span> and the <span class="highlight">omega pattern</span>.</li>
+        <li>Use the <span class="highlight">omega pattern</span> to open the omega box in the burial room. Collect the <span class="highlight">pipe for pipe-organ</span>.</li>
+        <li>Place the <span class="highlight">pipe for pipe-organ</span> at the pipe organ in the music room and collect the <span class="highlight">sword</span>.</li>
+        <li>Use the <span class="highlight">sword</span> on the knight at the underground hall. Collect the <span class="highlight">can opener</span>.</li>
+        <li>Open the can at the pantry with the <span class="highlight">can opener</span> and collect a <span class="highlight">piece of cloth</span>.</li>
+        <li>Place the <span class="highlight">piece of cloth</span> at the sewing machine and reveal the code to the line-letter game at the calligraphy room.</li>
+        <li>Solve the line-letter game at the calligraphy room and collect the <span class="highlight">sigma key</span>.</li>
+        <li>Use the <span class="highlight">sigma key</span> to open the drawer in the Omega bedroom. Collect the <span class="highlight">needle</span> and the <span class="highlight">sieve</span>.</li>
+        <li>Sieve the flour at the bakery room with the <span class="highlight">sieve</span> and collect the <span class="highlight">bead</span>.</li>
+        <li>Place the <span class="highlight">bead</span> at the box in the cavern of candles room and collect the <span class="highlight">oil can</span>.</li>
+        <li>Collect the <span class="highlight">bag of sand</span> from the cavern of candles room.</li>
+        <li>Use the <span class="highlight">needle</span> to pop the balloon in the garden. Collect the <span class="highlight">fan button</span>.</li>
+        <li>Place the <span class="highlight">fan button</span> at the fan in the calligraphy room. Pour the <span class="highlight">bag on sand</span> on the sticky table to reveal the safe code.</li>
+        <li>Solve the safe combination at the Phi bedroom and collect the <span class="highlight">blue flower</span>.</li>
+        <li>Place the <span class="highlight">blue flower</span> in the flowerpot at the garden and collect the <span class="highlight">white snake key</span>.</li>
+        <li>Use the <span class="highlight">white snake key</span> to open the cell under the white snake in the underground hall. Collect the <span class="highlight">psi key</span>.</li>
+        <li>Use the <span class="highlight">psi key</span> to open the closet in the dressing room. Collect the <span class="highlight">spray</span>.</li>
+        <li>Use the <span class="highlight">spray</span> on the wall at the cavern of bakery room to reveal third code of potions game.</li>
+        <li>Use the <span class="highlight">matches</span> and the <span class="highlight">oil can</span> to lit the oil lamp at the cavern between the Psi bathroom and the music room. Reveal the page number of the book rite on the wall.</li>
+        <li>Open the book at the page number written on the wall. Collect <span class="highlight">red potion bottle</span> and reveal fourth code of potions game.</li>
+        <li>Solve the potions game at the alchemy room. Collect the <span class="highlight">purple diamond</span>.</li>
+      </ol>
+
+      <div class="section-title">Epilogue:</div>
+      <ol class="steps">
+        <li>Place all diamonds at the device in the cavern of the bakery room. Collect the <span class="highlight">hexagram key</span>.</li>
+        <li>Use the <span class="highlight">hexagram key</span> to open the cell at the wall in the cavern between work room and alchemy room. Collect the <span class="highlight">red puzzle piece</span>.</li>
+        <li>Place the <span class="highlight">bottle of wine</span> at the wine shelf in the wine room. Collect the <span class="highlight">goblet</span>.</li>
+        <li>Place the <span class="highlight">goblet</span> at the stand in the pray room. Collect the <span class="highlight">yellow flower</span>.</li>
+        <li>Place the <span class="highlight">yellow flower</span> in the flowerpot at the library room and collect the <span class="highlight">black eagle key</span>.</li>
+        <li>Use the <span class="highlight">black eagle key</span> to open the cell under the black eagle at the entrance hall. Collect the <span class="highlight">blue puzzle piece</span>.</li>
+        <li>Place all puzzle pieces at the puzzle box in the dressing room (order by the letters on the bedrooms' doors at the hallway). Collect the <span class="highlight">stone ball</span>.</li>
+        <li>Use the <span class="highlight">stone ball</span> to press the button at the wine room and open the exit door.</li>
       </ol>
 
       <div class="footer">

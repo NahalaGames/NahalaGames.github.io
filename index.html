@@ -1,200 +1,473 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nahala Games</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nahala Games</title>
 
-<style>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:#000;
+      color:white;
+    }
 
-body{
-margin:0;
-font-family:Arial;
-background:#000;
-color:white;
-}
+    .highlight{
+      color:#d78b8b;
+      font-weight:bold;
+    }
 
-/* logo */
+    .page{
+      display:none;
+    }
 
-.logo{
-text-align:center;
-padding:20px;
-font-size:28px;
-letter-spacing:3px;
-}
+    .page.active{
+      display:block;
+    }
 
-/* menu */
+    .logo{
+      text-align:center;
+      padding:20px;
+      font-size:28px;
+      letter-spacing:3px;
+      border-bottom:1px solid #222;
+    }
 
-.top-menu{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-border-top:1px solid #333;
-border-bottom:1px solid #333;
-}
+    .top-menu{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      border-bottom:1px solid #333;
+      position:relative;
+      z-index:20;
+    }
 
-.menu-item{
-padding:15px 30px;
-cursor:pointer;
-border-right:1px solid #333;
-}
+    .menu-item{
+      padding:18px 34px;
+      cursor:pointer;
+      border-right:1px solid #333;
+      position:relative;
+      font-size:16px;
+    }
 
-.menu-item:last-child{
-border-right:none;
-}
+    .menu-item:last-child{
+      border-right:none;
+    }
 
-/* slider */
+    .menu-item:hover{
+      background:#111;
+    }
 
-.slider{
-width:90%;
-margin:30px auto;
-position:relative;
-}
+    .dropdown{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      min-width:280px;
+      background:#2b2b2b;
+      border:1px solid #444;
+      z-index:50;
+    }
 
-.slide{
-display:none;
-}
+    .menu-item:hover .dropdown{
+      display:block;
+    }
 
-.slide img{
-width:100%;
-height:500px;
-object-fit:cover;
-}
+    .dropdown div{
+      padding:12px 16px;
+      border-bottom:1px solid #444;
+      white-space:nowrap;
+    }
 
-.slide.active{
-display:block;
-}
+    .dropdown div:last-child{
+      border-bottom:none;
+    }
 
-/* arrows */
+    .dropdown div:hover{
+      background:#3b3b3b;
+    }
 
-.arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-font-size:40px;
-cursor:pointer;
-padding:10px;
-}
+    .slider{
+      width:90%;
+      max-width:1400px;
+      margin:30px auto;
+      position:relative;
+    }
 
-.left{ left:10px }
-.right{ right:10px }
+    .slide{
+      display:none;
+    }
 
-/* dots */
+    .slide.active{
+      display:block;
+    }
 
-.dots{
-text-align:center;
-margin-top:10px;
-}
+    .slide img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+      border:1px solid #444;
+    }
 
-.dot{
-height:10px;
-width:10px;
-background:white;
-display:inline-block;
-margin:5px;
-border-radius:50%;
-opacity:.4;
-cursor:pointer;
-}
+    .arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:50px;
+      cursor:pointer;
+      color:white;
+      padding:10px;
+      user-select:none;
+    }
 
-.dot.active{
-opacity:1;
-}
+    .left{
+      left:15px;
+    }
 
-/* mobile */
+    .right{
+      right:15px;
+    }
 
-@media(max-width:700px){
+    .dots{
+      text-align:center;
+      margin-top:12px;
+    }
 
-.slide img{
-height:250px;
-}
+    .dot{
+      height:12px;
+      width:12px;
+      background:white;
+      display:inline-block;
+      margin:5px;
+      border-radius:50%;
+      opacity:.4;
+      cursor:pointer;
+    }
 
-.menu-item{
-padding:12px;
-font-size:14px;
-}
+    .dot.active{
+      opacity:1;
+    }
 
-.logo{
-font-size:22px;
-}
+    .content-section{
+      width:90%;
+      max-width:1400px;
+      margin:0 auto 40px auto;
+    }
 
-}
+    .walkthrough-header{
+      text-align:center;
+      font-size:48px;
+      margin-top:40px;
+      margin-bottom:10px;
+      letter-spacing:2px;
+    }
 
-</style>
+    .walkthrough-subline{
+      text-align:center;
+      font-size:24px;
+      margin-bottom:40px;
+    }
+
+    .game-title-row{
+      display:flex;
+      flex-direction:row-reverse;
+      align-items:flex-start;
+      justify-content:flex-end;
+      gap:30px;
+      margin-bottom:30px;
+    }
+
+    .game-icon{
+      width:120px;
+      height:120px;
+      object-fit:cover;
+      border-radius:20px;
+      border:3px solid #999;
+      box-shadow:0 0 10px rgba(255,255,255,0.2);
+      flex-shrink:0;
+    }
+
+    .game-title{
+      font-size:34px;
+      margin-top:20px;
+      font-weight:normal;
+      letter-spacing:1px;
+    }
+
+    .spoiler{
+      font-size:22px;
+      margin-top:10px;
+      margin-bottom:20px;
+    }
+
+    .warning{
+      font-size:22px;
+      margin-bottom:30px;
+    }
+
+    .steps{
+      font-size:22px;
+      line-height:1.45;
+      padding-left:32px;
+    }
+
+    .steps li{
+      margin-bottom:18px;
+    }
+
+    .footer{
+      text-align:center;
+      padding:40px 20px;
+      font-size:22px;
+      border-top:1px solid #333;
+      margin-top:50px;
+    }
+
+    .footer strong{
+      color:white;
+    }
+
+    @media(max-width:900px){
+      .slide img{
+        height:300px;
+      }
+
+      .menu-item{
+        padding:14px 18px;
+        font-size:14px;
+      }
+
+      .logo{
+        font-size:22px;
+      }
+
+      .walkthrough-header{
+        font-size:34px;
+      }
+
+      .walkthrough-subline{
+        font-size:18px;
+      }
+
+      .game-title-row{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+      }
+
+      .game-title{
+        font-size:28px;
+        margin-top:0;
+      }
+
+      .steps{
+        font-size:18px;
+      }
+
+      .footer{
+        font-size:18px;
+      }
+
+      .dropdown{
+        min-width:220px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="logo">
-NAHALA GAMES
-</div>
+  <div class="logo">NAHALA GAMES</div>
 
-<div class="top-menu">
-<div class="menu-item">Home</div>
-<div class="menu-item">About Us</div>
-<div class="menu-item">The Games</div>
-<div class="menu-item">Walkthrough</div>
-<div class="menu-item">Contact Us</div>
-</div>
+  <div class="top-menu">
+    <div class="menu-item" onclick="showPage('homePage')">Home</div>
+    <div class="menu-item">About Us</div>
+    <div class="menu-item">The Games</div>
 
-<div class="slider">
+    <div class="menu-item">
+      Walkthrough
+      <div class="dropdown">
+        <div onclick="event.stopPropagation(); showPage('treasurePage')">The Hidden Treasure of Nahala</div>
+        <div onclick="event.stopPropagation(); alert('This walkthrough will be added soon.')">The Hidden Caverns of Nahala</div>
+        <div onclick="event.stopPropagation(); alert('This walkthrough will be added soon.')">The Hidden Valley of Nahala</div>
+      </div>
+    </div>
 
-<div class="slide active">
-<img src="game1.jpg">
-</div>
+    <div class="menu-item">Contact Us</div>
+  </div>
 
-<div class="slide">
-<img src="game2.png">
-</div>
+  <!-- HOME PAGE -->
+  <div id="homePage" class="page active">
+    <div class="slider">
+      <div class="slide active">
+        <img src="game1.jpg" alt="Game 1">
+      </div>
 
-<div class="slide">
-<img src="game3.jpg">
-</div>
+      <div class="slide">
+        <img src="game2.png" alt="Game 2">
+      </div>
 
-<div class="arrow left" onclick="prev()">❮</div>
-<div class="arrow right" onclick="next()">❯</div>
+      <div class="slide">
+        <img src="game3.jpg" alt="Game 3">
+      </div>
 
-<div class="dots">
-<span class="dot active" onclick="go(0)"></span>
-<span class="dot" onclick="go(1)"></span>
-<span class="dot" onclick="go(2)"></span>
-</div>
+      <div class="arrow left" onclick="prev()">❮</div>
+      <div class="arrow right" onclick="next()">❯</div>
 
-</div>
+      <div class="dots">
+        <span class="dot active" onclick="go(0)"></span>
+        <span class="dot" onclick="go(1)"></span>
+        <span class="dot" onclick="go(2)"></span>
+      </div>
+    </div>
 
-<script>
+    <div class="footer">
+      <strong>*** For any question, problem or comment Please contact us: NahalaGames@gmail.com</strong>
+    </div>
+  </div>
 
-let index=0
-let slides=document.querySelectorAll(".slide")
-let dots=document.querySelectorAll(".dot")
+  <!-- WALKTHROUGH PAGE -->
+  <div id="treasurePage" class="page">
+    <div class="content-section">
+      <div class="walkthrough-header">WALKTHROUGH</div>
+      <div class="walkthrough-subline">✦────────✦────────✦</div>
 
-function show(i){
-slides.forEach(s=>s.classList.remove("active"))
-dots.forEach(d=>d.classList.remove("active"))
-slides[i].classList.add("active")
-dots[i].classList.add("active")
-index=i
-}
+      <div class="game-title-row">
+        <img src="game1.jpg" alt="The Hidden Treasure of Nahala" class="game-icon">
 
-function next(){
-index++
-if(index>=slides.length) index=0
-show(index)
-}
+        <div style="flex:1;">
+          <div class="game-title">THE HIDDEN TREASURE OF NAHALA</div>
+        </div>
+      </div>
 
-function prev(){
-index--
-if(index<0) index=slides.length-1
-show(index)
-}
+      <div class="spoiler">Spoiler Alert!</div>
+      <div class="warning">Do not read this walkthrough unless you're really stuck...</div>
 
-/* auto slide */
+      <ol class="steps">
+        <li>Place the <span class="highlight">sun-shaped stone</span> on the entrance doors to enter the house.</li>
 
-setInterval(()=>{
-next()
-},4000)
+        <li>Use the <span class="highlight">wine bottle</span> in the living room to fill the glass of wine in the kitchen. Collect the <span class="highlight">wooden key</span>.</li>
 
-</script>
+        <li>On the shelf at the work room, take the <span class="highlight">first piece of the puzzle</span>.</li>
+
+        <li>Use the <span class="highlight">wooden key</span> to open the closet in the parents' room and take a <span class="highlight">light bulb</span>.</li>
+
+        <li>Placing the <span class="highlight">light bulb</span> into the kitchen lamp reveals the colors sequence to open the pantry doors.</li>
+
+        <li>In the pantry you will find a <span class="highlight">watering can</span> and a <span class="highlight">pry bar</span>.</li>
+
+        <li>Fill the <span class="highlight">watering can</span> in the bathroom. Water the flower in the entrance hall and take the <span class="highlight">battery</span>.</li>
+
+        <li>Go into the bathroom and close the shower curtain to reveal the code. Use this code to unite the leather bag in the parents' room. Collect the <span class="highlight">key</span>.<br>
+        Note: Make sure to zoom on the code in the bathroom and click on it!</li>
+
+        <li>Open the kids room using the <span class="highlight">key</span> you have found in the parents' room. Use the battery to activate the train in the kids room. Collect the <span class="highlight">eagle-shaped key</span>.</li>
+
+        <li>Solve the riddle on the shelf in the kids room and get the <span class="highlight">first test tube</span>.<br>
+        Note: for further instructions regarding this riddle, see The Tower of Hanoi.</li>
+
+        <li>Use the <span class="highlight">eagle-shaped key</span> to open the cell under the eagle in the entrance hall. Take the <span class="highlight">hoe</span>.<br>
+        Note: Make sure to zoom in when trying to open the eagle cell!</li>
+
+        <li>Use the <span class="highlight">pry bar</span> to lift the floor tile in the work room and get the <span class="highlight">white key</span> to open the garden's door.</li>
+
+        <li>Use the <span class="highlight">hoe</span> to dig up the <span class="highlight">tile</span> from the pit in the garden.</li>
+
+        <li>Use the code on the pillow in the living room to open the drawer at the fountain in the garden. Collect the <span class="highlight">rusty key</span> (that opens the back door of the work room) and the <span class="highlight">star-shaped stone</span>.</li>
+
+        <li>Use the <span class="highlight">star-shaped stone</span> to open a drawer in the kids room. Take the <span class="highlight">second test tube</span>.</li>
+
+        <li>Place the <span class="highlight">tile</span> in the missing spot in the bathroom and collect the <span class="highlight">rope</span>.</li>
+
+        <li>Use the <span class="highlight">rope</span> to climb down the well. Collect the <span class="highlight">snake-shaped key</span> and the elevator button.</li>
+
+        <li>Use the <span class="highlight">snake-shaped key</span> to open the cell under the snake to find an <span class="highlight">axe</span>.</li>
+
+        <li>Use the <span class="highlight">axe</span> to open the passage in the garden.</li>
+
+        <li>On the window in the garden (when the curtain is closed) find the code to open the oven.</li>
+
+        <li>In the garden, under the stone, collect the <span class="highlight">lighter</span>.</li>
+
+        <li>Use the code combination you have found to open the oven. Inside the oven you will find a <span class="highlight">chimney cleaner</span>.</li>
+
+        <li>Lit the candle in the hallway and collect the <span class="highlight">screwdriver</span>.</li>
+
+        <li>In the garden, use the <span class="highlight">screwdriver</span> to open the ventilation shaft. Get the <span class="highlight">sun-shaped stone</span> and the <span class="highlight">second piece of the puzzle</span>.</li>
+
+        <li>Place the <span class="highlight">sun-shaped stone</span> in the box located in the tree trunk. Collect the <span class="highlight">magnifying glass</span>.</li>
+
+        <li>Use the magnifying glass to find the code on the rice. Open the safe in the work room with this code and get the <span class="highlight">statue's head</span>.</li>
+
+        <li>Place the <span class="highlight">head of the statue</span> in the garden. Take the <span class="highlight">record</span>.</li>
+
+        <li>Put the <span class="highlight">record</span> onto the record player to get a <span class="highlight">moon-shaped stone</span>.</li>
+
+        <li>Use the <span class="highlight">moon-shaped stone</span> to open the chest in the parents' room and collect the <span class="highlight">third test tube</span>.</li>
+
+        <li>Use the elevator to get the roof and collect the <span class="highlight">third piece of the puzzle</span> from the box to the left.</li>
+
+        <li>Clean the chimney with the chimney cleaner to push a box into the fire place.</li>
+
+        <li>Go to the living room and open the box inside the fire place using the time on the clock in the workroom. Collect the <span class="highlight">fourth piece of the puzzle</span>.</li>
+
+        <li>Complete the puzzle in the living room (using the code on the book at the parents' room) to find the <span class="highlight">fourth test tube</span>.</li>
+
+        <li>Use the four test tubes in the work room and get the wooden key. Open the chest in the kids room and get the <span class="highlight">dust cleaner</span>.</li>
+
+        <li>Use the <span class="highlight">dust cleaner</span> to clean the dust in the pantry. Open the secret door with the <span class="highlight">pry bar</span> to reveal the puzzle on it.</li>
+
+        <li>Solve the puzzle under the dust (using the code on the picture near the elevator) and open the door to the secret room.<br>
+        Note: Make sure to set the left up tile in the right order (yellow pipe points up).</li>
+      </ol>
+
+      <div class="footer">
+        <strong>*** For any question, problem or comment Please contact us: NahalaGames@gmail.com</strong>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let index = 0;
+    let slides = document.querySelectorAll(".slide");
+    let dots = document.querySelectorAll(".dot");
+
+    function show(i){
+      slides.forEach(s => s.classList.remove("active"));
+      dots.forEach(d => d.classList.remove("active"));
+      slides[i].classList.add("active");
+      dots[i].classList.add("active");
+      index = i;
+    }
+
+    function next(){
+      index++;
+      if(index >= slides.length) index = 0;
+      show(index);
+    }
+
+    function prev(){
+      index--;
+      if(index < 0) index = slides.length - 1;
+      show(index);
+    }
+
+    function go(i){
+      show(i);
+    }
+
+    setInterval(() => {
+      if(document.getElementById("homePage").classList.contains("active")){
+        next();
+      }
+    }, 4000);
+
+    function showPage(pageId){
+      document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+      document.getElementById(pageId).classList.add("active");
+      window.scrollTo(0,0);
+    }
+  </script>
 
 </body>
 </html>
